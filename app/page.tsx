@@ -1,103 +1,173 @@
 import Image from "next/image";
+import Script from "next/script";
+import { Github, Linkedin, Mail, Instagram } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-900">
+      <Script
+        type="application/ld+json"
+        id="person-schema"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Muhammad Zahran Albara",
+            alumniOf: {
+              "@type": "CollegeOrUniversity",
+              name: "Institut Teknologi Bandung"
+            },
+            sameAs: [],
+            url: "https://zahranalbara.vercel.app",
+            jobTitle: "Mahasiswa Teknik Informatika",
+            knowsAbout: [
+              "Next.js", "TypeScript", "PHP", "Laravel",
+              "Godot", "Kotlin", "Go", "Tailwind", "ReactJS"
+            ]
+          }),
+        }}
+      />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Section */}
+      <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16">
+        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+          <div className="md:w-1/2 mb-10 md:mb-0">
+            <h1 className="text-5xl font-bold leading-tight mb-2">Muhammad Zahran Albara</h1>
+            <p className="text-blue-100 text-xl mb-1">NIM: 122140240</p>
+            <p className="text-blue-100 text-lg">Teknik Informatika, Semester 6</p>
+            
+            <div className="mt-8 flex space-x-4">
+              <a href="#" className="bg-white text-blue-700 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors duration-300">
+                Portfolio
+              </a>
+              <a href="#" className="border border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-700 transition-colors duration-300">
+                Kontak
+              </a>
+            </div>
+          </div>
+          
+          <div className="md:w-1/3 flex justify-center">
+            <div className="relative w-64 h-64">
+              <div className="absolute inset-0 bg-blue-400 rounded-full opacity-20 blur-xl"></div>
+              <Image
+                src="/profile.jpg"
+                alt="Foto Muhammad Zahran Albara"
+                width={256}
+                height={256}
+                className="rounded-full z-10 relative border-4 border-white shadow-xl"
+              />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </div>
+
+      {/* About Me Section */}
+      <section className="py-16 px-6">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 inline-block pb-2 border-b-4 border-blue-500">Tentang Saya</h2>
+          </div>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            Saya adalah mahasiswa semester 6 yang tertarik pada pengembangan web dan aplikasi,
+            baik frontend maupun backend. Saya aktif mengeksplorasi teknologi modern untuk meningkatkan
+            keterampilan dan pengetahuan saya dalam bidang teknologi informasi. Dengan semangat belajar yang tinggi,
+            saya terus mengembangkan diri untuk menjadi seorang developer yang handal.
+          </p>
+          
+          <div className="mt-8 flex justify-center space-x-6">
+            <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+              <Github size={24} />
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+              <Linkedin size={24} />
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+              <Mail size={24} />
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+              <Instagram size={24} />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section className="py-16 px-6 bg-gray-50">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 inline-block pb-2 border-b-4 border-blue-500">Skill</h2>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {[
+              "Next.js", "TypeScript", "PHP", "Laravel",
+              "Godot", "Kotlin", "Golang", "Tailwind", "ReactJS"
+            ].map((skill) => (
+              <div key={skill} className="bg-white rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300">
+                <div className="text-center">
+                  <p className="font-semibold text-lg text-gray-800">{skill}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section className="py-16 px-6">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 inline-block pb-2 border-b-4 border-blue-500">Projek</h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="h-48 relative">
+                <Image
+                  src="/LILU.png"
+                  alt="Thumbnail LILU"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-bold text-xl mb-2">LILU</h3>
+                <p className="text-gray-600 mb-4">Sebuah game 3D horror yang dikembangkan menggunakan Godot 4.3.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Gdscript</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Blender</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="h-48 relative">
+                <Image
+                  src="/Gehenna.png"
+                  alt="Thumbnail Gehenna"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-bold text-xl mb-2">Gehenna</h3>
+                <p className="text-gray-600 mb-4">Sebuah Game 2D Action Platformer yang dikembangkan menggunakan bahasa Python dan Library Pygame.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Python</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white py-8 px-6">
+        <div className="container mx-auto max-w-4xl text-center">
+          <p className="mb-2">© 2025 Muhammad Zahran Albara</p>
+          <p className="text-gray-400 text-sm">Teknik Informatika - Institut Teknologi Sumatera</p>
+        </div>
       </footer>
-    </div>
+    </main>
   );
 }
